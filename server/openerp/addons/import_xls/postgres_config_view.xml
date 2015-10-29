@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_postgres_config_tree" model="ir.ui.view">
+			<field name="name">postgres.config.tree</field>
+			<field name="model">postgres.config</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Postgres Configuration">
+					<field name="db_user" />
+					<field name="host_name" />
+					<field name="db_user_pass" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_postgres_config_form" model="ir.ui.view">
+			<field name="name">postgres.config.form</field>
+			<field name="model">postgres.config</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Postgres Configuration" version="7.0">
+					<sheet>
+						<group col="4" colspan="4">
+							<field name="db_user" />
+							<field name="host_name" />
+							<field name="db_user_pass" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_open_postgres_config_view">
+			<field name="name">Postgres Configuration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">postgres.config</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		<menuitem id="menu_postgres_config_base" name="Postgres Configuration" parent="base.menu_custom"
+			sequence="20" groups="utility_renewals.group_contract_sys_admin,utility_renewals.group_contract_admin" />
+		
+		<menuitem id="menu_postgres_config" name="Postgres Configuration" parent="menu_postgres_config_base"
+			sequence="20" action="act_open_postgres_config_view" />
+			
+		
+	</data>
+</openerp>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="group_custom_doctor" model="res.groups">
+			<field name="name">Medical Doctor</field>
+		</record>
+		<record id="group_custom_report" model="res.groups">
+			<field name="name">Medical Reporting</field>
+		</record>
+		
+		
+	</data>
+</openerp>

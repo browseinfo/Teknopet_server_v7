@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+    	
+    	<!-- Demo data for Medical Patient Status -->
+    	<record id="medical_patient_status_1" model="medical.patient.status">
+            <field name="name">Local</field>
+        </record>
+        
+        <record id="medical_patient_status_2" model="medical.patient.status">
+            <field name="name">Expat</field>
+        </record>
+        
+        <record id="medical_patient_status_3" model="medical.patient.status">
+            <field name="name">Dependant</field>
+        </record>
+        
+        <record id="medical_patient_status_4" model="medical.patient.status">
+            <field name="name">Other</field>
+        </record>
+    	
+    	<!-- Demo data for Medical Specialty -->
+    	
+    	<record id="medical_specialty_1" model="medical.specialty">
+            <field name="name">Cardiologie</field>
+        </record>
+        
+        <record id="medical_specialty_2" model="medical.specialty">
+            <field name="name">Dermatologie</field>
+        </record>
+        
+        <record id="medical_specialty_3" model="medical.specialty">
+            <field name="name">Endocrinologie</field>
+        </record>
+        
+        <record id="medical_specialty_4" model="medical.specialty">
+            <field name="name">Gastroenterologie</field>
+        </record>
+        
+        <record id="medical_specialty_5" model="medical.specialty">
+            <field name="name">Gynecologie</field>
+        </record>
+        
+        <record id="medical_specialty_6" model="medical.specialty">
+            <field name="name">Infectiologie</field>
+        </record>
+        
+        <record id="medical_specialty_7" model="medical.specialty">
+            <field name="name">Orl</field>
+        </record>
+        
+        <record id="medical_specialty_8" model="medical.specialty">
+            <field name="name">Parasitologie</field>
+        </record>
+        
+        <record id="medical_specialty_9" model="medical.specialty">
+            <field name="name">Pneumologie</field>
+        </record>
+        
+        <record id="medical_specialty_10" model="medical.specialty">
+            <field name="name">Psychiatrie</field>
+        </record>
+        
+        <record id="medical_specialty_11" model="medical.specialty">
+            <field name="name">Traumatologie</field>
+        </record>
+        
+        <record id="medical_specialty_12" model="medical.specialty">
+            <field name="name">Urologie</field>
+        </record>
+        
+        <record id="medical_specialty_13" model="medical.specialty">
+            <field name="name">Autre</field>
+        </record>
+        
+        <!-- Demo data for Medical Activity -->
+    	
+    	<record id="medical_activity_1" model="medical.activity">
+            <field name="name">CS Medical</field>
+        </record>
+        
+        <record id="medical_activity_2" model="medical.activity">
+            <field name="name">Check Voyage</field>
+        </record>
+        
+        <record id="medical_activity_3" model="medical.activity">
+            <field name="name">Dossier Evacuation</field>
+        </record>
+        
+        <record id="medical_activity_4" model="medical.activity">
+            <field name="name">Surveillance</field>
+        </record>
+        
+        <!-- Demo data for Medical Destination -->
+    	
+    	<record id="medical_destination_1" model="medical.destination">
+            <field name="name">Home TA</field>
+        </record>
+        
+        <record id="medical_destination_2" model="medical.destination">
+            <field name="name">Home without TA</field>
+        </record>
+        
+        <record id="medical_destination_3" model="medical.destination">
+            <field name="name">Hospitalization</field>
+        </record>
+        
+        <record id="medical_destination_4" model="medical.destination">
+            <field name="name">Evacuation</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Decision -->
+    	
+    	<record id="medical_om_decision_1" model="medical.om.decision">
+            <field name="name">Fit</field>
+            <field name="code">Fit</field>
+        </record>
+        
+        <record id="medical_om_decision_2" model="medical.om.decision">
+            <field name="name">Fit with reserves</field>
+            <field name="code">FWR</field>
+        </record>
+        
+        <record id="medical_om_decision_3" model="medical.om.decision">
+            <field name="name">Not fit temporarily</field>
+            <field name="code">NFT</field>
+        </record>
+        
+        <record id="medical_om_decision_4" model="medical.om.decision">
+            <field name="name">Fit definitively</field>
+            <field name="code">FD</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Disease Sentinel -->
+    	
+    	<record id="medical_disease_sentinel_1" model="medical.disease.sentinel">
+            <field name="name">Diarrhee</field>
+        </record>
+        
+        <record id="medical_disease_sentinel_2" model="medical.disease.sentinel">
+            <field name="name">Paludisme</field>
+        </record>
+        
+        <record id="medical_disease_sentinel_3" model="medical.disease.sentinel">
+            <field name="name">MST</field>
+        </record>
+        
+        <record id="medical_disease_sentinel_4" model="medical.disease.sentinel">
+            <field name="name">Tuberculose</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Act Group -->
+    	
+    	<record id="medical_act_group_1" model="medical.act.group">
+            <field name="name">Systeme Nerveux</field>
+            <field name="code">A</field>
+        </record>
+        
+        <record id="medical_act_group_2" model="medical.act.group">
+            <field name="name">Oeil</field>
+            <field name="code">B</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Act Category -->
+    	
+    	<record id="medical_act_category_1" model="medical.act.category">
+            <field name="name">Encephale</field>
+            <field name="code">AA</field>
+            <field name="med_act_group_id" ref="medical_act_group_1" />
+        </record>
+        
+        <record id="medical_act_category_2" model="medical.act.category">
+            <field name="name">Ventricule</field>
+            <field name="code">BB</field>
+            <field name="med_act_group_id" ref="medical_act_group_1" />
+        </record>
+        
+        
+        <!-- Demo data for Medical Act -->
+    	
+    	<record id="medical_act_1" model="medical.act">
+            <field name="name">Exerese</field>
+            <field name="code">AAFA001</field>
+            <field name="med_act_categ_id" ref="medical_act_category_1" />
+        </record>
+        
+        <record id="medical_act_2" model="medical.act">
+            <field name="name">Excision</field>
+            <field name="code">AAFA007</field>
+            <field name="med_act_categ_id" ref="medical_act_category_1" />
+        </record>
+        
+        
+        <!-- Demo data for Medical OM Type -->
+    	
+    	<record id="medical_om_type_1" model="medical.om.type">
+            <field name="name">Recruitment</field>
+        </record>
+        
+        <record id="medical_om_type_2" model="medical.om.type">
+            <field name="name">Annual</field>
+        </record>
+        
+        <record id="medical_om_type_3" model="medical.om.type">
+            <field name="name">Accident</field>
+        </record>
+        
+        <record id="medical_om_type_4" model="medical.om.type">
+            <field name="name">Specific</field>
+        </record>
+        
+        <record id="medical_om_type_5" model="medical.om.type">
+            <field name="name">End of contract</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Medicament Galenic -->
+    	
+    	<record id="medical_medicament_galenic_1" model="medical.medicament.galenic">
+            <field name="name">Aerosol</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_2" model="medical.medicament.galenic">
+            <field name="name">Collutoire</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_3" model="medical.medicament.galenic">
+            <field name="name">Collyre</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_4" model="medical.medicament.galenic">
+            <field name="name">Comprime</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_5" model="medical.medicament.galenic">
+            <field name="name">CP</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_6" model="medical.medicament.galenic">
+            <field name="name">Creme</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_7" model="medical.medicament.galenic">
+            <field name="name">Dosette</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_8" model="medical.medicament.galenic">
+            <field name="name">Gel</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_9" model="medical.medicament.galenic">
+            <field name="name">Gelule</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_10" model="medical.medicament.galenic">
+            <field name="name">Goutte</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_11" model="medical.medicament.galenic">
+            <field name="name">Inhalation</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_12" model="medical.medicament.galenic">
+            <field name="name">Injectable</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_13" model="medical.medicament.galenic">
+            <field name="name">Nebulisation</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_14" model="medical.medicament.galenic">
+            <field name="name">Ovule</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_15" model="medical.medicament.galenic">
+            <field name="name">Perfusable</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_16" model="medical.medicament.galenic">
+            <field name="name">Per os</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_17" model="medical.medicament.galenic">
+            <field name="name">Pommade</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_18" model="medical.medicament.galenic">
+            <field name="name">Poudre</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_19" model="medical.medicament.galenic">
+            <field name="name">Sachet</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_20" model="medical.medicament.galenic">
+            <field name="name">Sirop</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_21" model="medical.medicament.galenic">
+            <field name="name">Solution</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_22" model="medical.medicament.galenic">
+            <field name="name">Spray</field>
+        </record>
+        
+        <record id="medical_medicament_galenic_23" model="medical.medicament.galenic">
+            <field name="name">Suppositoire</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Medicament Speciality -->
+    	
+    	<record id="medical_medicament_speciality_1" model="medical.medicament.speciality">
+            <field name="name">Analgesique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_2" model="medical.medicament.speciality">
+            <field name="name">Anesthesie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_3" model="medical.medicament.speciality">
+            <field name="name">Antalgique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_4" model="medical.medicament.speciality">
+            <field name="name">Cardiologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_5" model="medical.medicament.speciality">
+            <field name="name">Dermatologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_6" model="medical.medicament.speciality">
+            <field name="name">Diabetologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_7" model="medical.medicament.speciality">
+            <field name="name">Endocrinologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_8" model="medical.medicament.speciality">
+            <field name="name">Gastro-Enterologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_9" model="medical.medicament.speciality">
+            <field name="name">Hemostatique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_10" model="medical.medicament.speciality">
+            <field name="name">Hypnotique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_11" model="medical.medicament.speciality">
+            <field name="name">Infectiologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_12" model="medical.medicament.speciality">
+            <field name="name">Metabolique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_13" model="medical.medicament.speciality">
+            <field name="name">Neurologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_14" model="medical.medicament.speciality">
+            <field name="name">Obstetrique</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_15" model="medical.medicament.speciality">
+            <field name="name">Ophtamologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_16" model="medical.medicament.speciality">
+            <field name="name">Oto-Rhyno-Laryngologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_17" model="medical.medicament.speciality">
+            <field name="name">Parasitologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_18" model="medical.medicament.speciality">
+            <field name="name">Pneumologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_19" model="medical.medicament.speciality">
+            <field name="name">Rhumatologie</field>
+        </record>
+        
+        <record id="medical_medicament_speciality_20" model="medical.medicament.speciality">
+            <field name="name">Toxicologie</field>
+        </record>
+        
+        
+        
+        <!-- Demo data for Medical Medicament Group -->
+    	
+    	<record id="medical_medicament_group_1" model="medical.medicament.group">
+            <field name="name">Absorbant</field>
+        </record>
+        
+        <record id="medical_medicament_group_2" model="medical.medicament.group">
+            <field name="name">Antiglaucomateux</field>
+        </record>
+        
+        
+        <!-- Demo data for Medical Examination -->
+    	
+    	<record id="medical_examination_1" model="medical.examination">
+            <field name="name">Angiographie</field>
+        </record>
+        
+        <record id="medical_examination_2" model="medical.examination">
+            <field name="name">Arteriographie</field>
+        </record>
+        
+        <record id="medical_examination_3" model="medical.examination">
+            <field name="name">Echo-dopler</field>
+        </record>
+        
+        <record id="medical_examination_4" model="medical.examination">
+            <field name="name">Echo-endoscopie</field>
+        </record>
+        
+        <record id="medical_examination_5" model="medical.examination">
+            <field name="name">Echogaphie</field>
+        </record>
+        
+        <record id="medical_examination_6" model="medical.examination">
+            <field name="name">Endoscopie</field>
+        </record>
+        
+        <record id="medical_examination_7" model="medical.examination">
+            <field name="name">IRM</field>
+        </record>
+        
+        <record id="medical_examination_8" model="medical.examination">
+            <field name="name">Iymphographie</field>
+        </record>
+        
+        <record id="medical_examination_9" model="medical.examination">
+            <field name="name">Phlebographie</field>
+        </record>
+        
+        <record id="medical_examination_10" model="medical.examination">
+            <field name="name">Radiographie</field>
+        </record>
+        
+        <record id="medical_examination_11" model="medical.examination">
+            <field name="name">Scanner</field>
+        </record>
+        
+        <record id="medical_examination_12" model="medical.examination">
+            <field name="name">Scintigraphie</field>
+        </record>
+        
+        <record id="medical_examination_13" model="medical.examination">
+            <field name="name">TDM</field>
+        </record>
+        
+        
+        
+        
+        <!-- Sequences for Consultation -->
+        
+		<record id="seq_patient_consultation" model="ir.sequence.type">
+			<field name="name">Consultation</field>
+			<field name="code">medical.patient.consultation</field>
+		</record>
+		<record id="seq_custom_consultation_name" model="ir.sequence">
+			<field name="name">Consultation</field>
+			<field name="code">medical.patient.consultation</field>
+			<field name="prefix">CNSL/%(year)s/</field>
+			<field name="padding">5</field>
+			<field name="implementation">no_gap</field>
+			<field name="company_id" eval="False" />
+		</record>
+        
+    
+    </data>
+</openerp>

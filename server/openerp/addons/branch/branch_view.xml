@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="view_res_branch_form" model="ir.ui.view">
+            <field name="name">res.branch.form</field>
+            <field name="model">res.branch</field>
+            <field name="arch" type="xml">
+            	<form string="Branch Information" version="7.0">
+            		<sheet>
+            			<group cols="4">
+            				<group>
+            					<field name="name"/>
+            					<field name="company_id"/>
+            					<field name="telephone_no"/>
+        					</group>
+        					<group>
+            					<field name="address"/>
+        					</group>
+            			</group>
+        			</sheet>
+    			</form>
+			</field>
+	</record>
+
+
+	<record id="view_res_branch__tree" model="ir.ui.view">
+		<field name="name">res.branch.tree</field>
+		<field name="model">res.branch</field>
+		<field name="arch" type="xml">
+			<tree string="Branch Information">
+				<field name="name"/>
+				<field name="company_id"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_res_branch_form" model="ir.actions.act_window">
+		<field name="name">Branch</field>
+		<field name="res_model">res.branch</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem action="action_res_branch_form"
+            id="menu_action_res_branch"
+            parent="base.menu_config_address_book"
+            sequence="17"/>
+
+    <record id="view_sale_order_extended_form1" model="ir.ui.view">
+        <field name="name">sale.order.form1.extend</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="client_order_ref" position="before">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_form_extended" model="ir.ui.view">
+        <field name="name">purchase.order.form.extended</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='warehouse_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_user_form_extended" model="ir.ui.view">
+        <field name="name">res.user.form.extended</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+                    <xpath expr="//group[@string='Allowed Companies']" position="before">
+	        	        <group colspan="4" col="4" string='Allowed Branches'>
+	        	            <group colspan="4">
+	                        	<field name="branch_ids" nolabel="1" widget="many2many_tags"/>
+	                        </group>
+	                    </group>
+                    </xpath>
+
+                <xpath expr="//field[@name='company_id']" position="after">
+                         <field name="branch_id"/>
+                </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_user_preference_form_extended" model="ir.ui.view">
+        <field name="name">res.user.preference.form.extended</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                         <field name="branch_id"/>
+                </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_branch_form1" model="ir.ui.view">
+        <field name="name">account.invoice.branch.extened</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="date_invoice" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_supplier_branch_form1" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.branch.extened</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <field name="date_invoice" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_journal_form1" model="ir.ui.view">
+        <field name="name">account.journal.branch.extened</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_prepurchase_extended_branch_form1" model="ir.ui.view">
+        <field name="name">pre.purchase.extened</field>
+        <field name="model">prepurchase.order</field>
+        <field name="inherit_id" ref="sale_to_purchase.prepurchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_form_branch_budget_extende_form" model="ir.ui.view">
+        <field name="name">crossovered.branch.budget</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name='branch_id'/>
+            </xpath>
+        </field>
+    </record>  
+
+
+
+    </data>
+</openerp>

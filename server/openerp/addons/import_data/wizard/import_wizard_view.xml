@@ -1,0 +1,39 @@
+<openerp>
+    <data>
+    	
+    	 <record id="view_import_data_wizard" model="ir.ui.view">
+            <field name="name">import.data.form</field>
+            <field name="model">import.data</field>
+            <field name="arch" type="xml">
+				<form string="Import Wizard" version="7.0">
+					<group>
+                   		<field name="file" />
+                   	</group>
+                   	<footer>
+						<button name="import_file" type="object" string="Import" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+                </form>
+            </field>
+        </record>
+		
+        
+       	<record id="action_import_data_view" model="ir.actions.act_window">
+             <field name="name">Import Data</field>
+             <field name="res_model">import.data</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_import_data_wizard"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+            
+    <menuitem icon="STOCK_PRINT" name="Import Data" parent="stock.menu_stock_root" 
+    	id="menu_import_data"/>
+    
+    <menuitem icon="STOCK_PRINT" name="Import Data" parent="menu_import_data" 
+    	action="action_import_data_view" id="menu_import_data_1"/>
+</data>
+</openerp>        

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<menuitem id="menu_medical_root" name="Medical Management" sequence="5" />
+			
+		<menuitem id="menu_medical_patient_base" name="Patients"
+			sequence="10" parent="menu_medical_root" />
+			
+		<menuitem id="menu_medical_doctor_base" name="Doctors"
+			sequence="20" parent="menu_medical_root" />
+			
+		<menuitem id="menu_medical_report_base" name="Reporting"
+			sequence="30" parent="menu_medical_root" />
+			
+		<menuitem id="menu_medical_desease_report" name="Desease Report"
+			sequence="10" parent="menu_medical_report_base" action="action_partner_form_patient" />
+			
+		<menuitem id="menu_medical_destination_report" name="Destination Report"
+			sequence="20" parent="menu_medical_report_base" action="action_partner_form_patient" />
+			
+		<menuitem id="menu_medical_config_base" name="Configuration"
+			sequence="100" parent="menu_medical_root" />
+			
+		<menuitem id="menu_medical_patients" name="Patients"
+			sequence="10" parent="menu_medical_patient_base" action="action_partner_form_patient" />
+		
+		<menuitem id="menu_medical_consultation" name="Consultation"
+			sequence="20" parent="menu_medical_patient_base" action="act_open_medical_patient_consultation_view" />
+			
+		<menuitem id="menu_medical_prescription" name="Prescription"
+			sequence="30" parent="menu_medical_patient_base" action="act_open_medical_patient_prescription_view" />
+    	
+    	<menuitem id="menu_medical_doctors" name="Doctors"
+			sequence="10" parent="menu_medical_doctor_base" action="open_view_employee_list_custom"/>
+			
+		<menuitem id="menu_product_normal_action_custom" name="Medicament"
+			sequence="05" parent="menu_medical_config_base" action="product_normal_action_custom_med" />
+		
+		<menuitem id="menu_medical_patient_status" name="Patient Status"
+			sequence="10" parent="menu_medical_config_base" action="action_partner_form_patient" />
+			
+		<menuitem id="menu_medical_specialty" name="Medical Specialty"
+			sequence="20" parent="menu_medical_config_base" action="act_open_medical_specialty_view" />
+			
+		<menuitem id="menu_medical_center" name="Medical Center"
+			sequence="30" parent="menu_medical_config_base" action="act_open_medical_center_view" />
+			
+		<menuitem id="menu_medical_activity" name="Medical Activity"
+			sequence="40" parent="menu_medical_config_base" action="act_open_medical_activity_view" />
+			
+		<menuitem id="menu_medical_destination1" name="Medical Destination"
+			sequence="50" parent="menu_medical_config_base" action="act_open_medical_destination_view" />
+			
+		<menuitem id="menu_medical_disease_base" name="Disease"
+			sequence="60" parent="menu_medical_config_base" />
+		
+		<menuitem id="menu_medical_disease_group" name="Group"
+			sequence="60" parent="menu_medical_disease_base" action="act_open_medical_disease_group_view" />
+			
+		<menuitem id="menu_medical_disease_category" name="Category"
+			sequence="70" parent="menu_medical_disease_base" action="act_open_medical_disease_category_view" />
+			
+		<menuitem id="menu_medical_disease_sentinel" name="Sentinel"
+			sequence="75" parent="menu_medical_disease_base" action="act_open_medical_disease_sentinel_view" />
+			
+		<menuitem id="menu_medical_disease" name="Disease"
+			sequence="80" parent="menu_medical_disease_base" action="act_open_medical_disease_view" />
+			
+		<menuitem id="menu_medical_act_group" name="Act Group"
+			sequence="80" parent="menu_medical_config_base" action="act_open_medical_act_group_view" />
+			
+		<menuitem id="menu_medical_act_category" name="Act Category"
+			sequence="90" parent="menu_medical_config_base" action="act_open_medical_act_category_view" />
+			
+		<menuitem id="menu_medical_act" name="Act"
+			sequence="100" parent="menu_medical_config_base" action="act_open_medical_act_view" />
+			
+		<menuitem id="menu_medical_om_type" name="Occupational Medicine Type"
+			sequence="110" parent="menu_medical_config_base" action="act_open_medical_om_type_view" />
+		
+		<menuitem id="menu_medical_om_decision" name="Occupational Medicine Decision"
+			sequence="120" parent="menu_medical_config_base" action="act_open_medical_om_decision_view" />
+			
+		<menuitem id="menu_medical_medicament_galenic" name="Medicament Galenic Form"
+			sequence="130" parent="menu_medical_config_base" action="act_open_medical_medicament_galenic_view" />
+			
+		<menuitem id="menu_medical_medicament_speciality" name="Medicament Speciality"
+			sequence="140" parent="menu_medical_config_base" action="act_open_medical_medicament_speciality_view" />
+			
+		<menuitem id="menu_medical_medicament_group" name="Medicament Group"
+			sequence="150" parent="menu_medical_config_base" action="act_open_medical_medicament_group_view" />
+			
+		<menuitem id="menu_medical_medicament_examination" name="Examination"
+			sequence="160" parent="menu_medical_config_base" action="act_open_medical_examination_view" />
+    
+    </data>
+</openerp>

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+
+"access_medical_patient_status_doctor","name_medical_patient_status_doctor","model_medical_patient_status","group_custom_doctor",1,1,1,1
+"access_medical_patient_status_report","name_medical_patient_status_report","model_medical_patient_status","group_custom_report",1,1,1,1
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report auto="False" id="report_presc"
+			model="medical.patient.prescription" name="report.prescription"
+			rml="custom_medical/report/prescription_report.rml" string="Prescription Report"
+			usage="default" />
+    </data>
+</openerp>

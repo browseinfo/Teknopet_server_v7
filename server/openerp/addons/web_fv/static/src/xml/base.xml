@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+<templates id="template" xml:space="preserve">
+<t t-extend="Login">
+    <t t-jquery="img" t-operation="replace">
+    <img src='/web_fv/static/src/img/fv_logo.png' width="280px"/>
+    </t>
+     <t t-jquery="div.oe_login_footer" t-operation="after">
+    		<div class="oe_login_footer" style="top:250px">
+	            <a href="http://www.farmvilla.co.in/" target="_blank">Provided by <span>Farmvilla Agro Product</span></a>
+            </div>
+     </t>
+</t>
+</templates>

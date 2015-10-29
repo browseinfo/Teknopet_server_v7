@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_product_form_custom_med">
+			<field name="name">product.normal.form.custom.med</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="arch" type="xml">
+				<notebook position="inside">
+					<page string="Medical">
+						<group string="Medicament">
+							<field name="is_medicament" />
+							<field name="dosage" />
+							<field name="med_group_id" />
+							<field name="med_galenic_id" />
+							<field name="speciality_id" />
+						</group>
+					</page>
+				</notebook>
+			</field>
+		</record>
+		
+		
+		<record id="product_normal_action_custom_med" model="ir.actions.act_window">
+            <field name="name">Medicament</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="product.product_product_tree_view"/>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="domain">[('is_medicament','=',True)]</field>
+			<field name="context">{'default_is_medicament': True}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new Medicament.
+              </p>
+            </field>
+        </record>
+		
+	</data>
+</openerp>

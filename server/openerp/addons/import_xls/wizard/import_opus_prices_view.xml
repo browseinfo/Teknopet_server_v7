@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_import_opus_price_wizard" model="ir.ui.view">
+            <field name="name">import.opus.price.wizard.form</field>
+            <field name="model">import.opus.prices.wizard</field>
+            <field name="arch" type="xml">
+				<form string="xls Wizard" version="7.0">
+                    <group>
+                    	<field name="name" />
+                    </group>
+                    <group col="4">
+                    	<field name="partner_id" domain="[('supplier','=',True)]"/>
+                    	<field name="contract_type_id" />
+                    	<field name="start_date" />
+                    	<field name="end_date" />
+                    </group>
+                    <group col="4">
+                    	<field name="categ_id" />
+                    </group>
+                    <group>
+                    	<field name="duration" />
+                    	<field name="file" />
+                    </group>
+                    <footer>
+                    	<button name="import_file" string="Import" type="object" icon="terp-camera_test" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"  icon="terp-gtk-stop"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_import_opus_prices_wizard" model="ir.actions.act_window">
+            <field name="name">Import Opus Pricelist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.opus.prices.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_import_opus_price_wizard"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+		
+		<menuitem id="menu_import_opus_prices_wizard_base" name="Import Opus Pricelist" parent="base.menu_base_config"
+			sequence="220" groups="utility_renewals.group_contract_sys_admin,utility_renewals.group_contract_admin" />
+		
+		<menuitem id="menu_import_opus_prices_wizard" name="Import Opus Pricelist" parent="menu_import_opus_prices_wizard_base"
+			sequence="05" action="action_import_opus_prices_wizard" />
+			
+		
+    </data>
+</openerp>

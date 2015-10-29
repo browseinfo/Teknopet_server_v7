@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>	
+	
+			<record id="view_picking_out_tree_custom" model="ir.ui.view">
+	            <field name="name">stock.picking.out.tree.custom</field>
+	            <field name="model">stock.picking.out</field>
+	            <field name="inherit_id" ref="stock.view_picking_out_tree"/>
+	            <field name="arch" type="xml">
+	            	<xpath expr="//field[@name='origin']" position="after">
+	            		<field name="is_prescription" />
+	            		<field name="prescription_doctor_id" />
+	            		<field name="prescription_patient_id" />
+	            		<field name="prescription_consultation_id" />
+	            	</xpath>
+	            </field>
+	        </record>
+	        
+	        
+	        <record id="view_picking_out_form_custom" model="ir.ui.view">
+	            <field name="name">stock.picking.out.form.custom</field>
+	            <field name="model">stock.picking.out</field>
+	            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+	            <field name="arch" type="xml">
+	                <xpath expr="//field[@name='origin']" position="after">
+	            		<field name="prescription_doctor_id" domain="[('is_doctor','=',True)]" attrs="{'invisible':[('is_prescription','=',False)],'required':[('is_prescription','=',True)]}"/>
+	            		<field name="prescription_patient_id" domain="[('is_patient','=',True)]" attrs="{'invisible':[('is_prescription','=',False)],'required':[('is_prescription','=',True)]}" />
+	                </xpath>
+	                <xpath expr="//field[@name='stock_journal_id']" position="after">
+	            		<field name="is_prescription" />
+	            		<field name="prescription_consultation_id" attrs="{'invisible':[('is_prescription','=',True)]}" />
+	            	</xpath>
+	            	<xpath expr="//field[@name='partner_id']" position="attributes">
+	            		<attribute name="attrs">{'invisible':[('is_prescription','=',True)]}</attribute>
+	            	</xpath>
+	            	<xpath expr="//field[@name='stock_journal_id']" position="attributes">
+	            		<attribute name="attrs">{'invisible':[('is_prescription','=',True)]}</attribute>
+	            	</xpath>
+	            </field>
+	        </record>
+	        
+	        <record id="action_picking_out_custom" model="ir.actions.act_window">
+	            <field name="name">Prescription</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">stock.picking.out</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">tree,form</field>
+	            <field name="domain">[('is_prescription','=',True)]</field>
+	            <field name="context">{"search_default_is_prescription":1, 'default_is_prescription': True}</field>
+	            <field name="view_id" ref="view_picking_out_tree_custom"/>
+	            <field name="help" type="html">
+	              <p class="oe_view_nocontent_create">
+	                Click to add a prescription.
+	              </p>
+	            </field>
+	        </record>
+	        
+	</data>
+</openerp>

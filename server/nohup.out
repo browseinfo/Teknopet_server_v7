@@ -1,0 +1,9 @@
+2014-07-15 08:40:57,328 3756 INFO ? openerp: OpenERP version 7.0
+2014-07-15 08:40:57,328 3756 INFO ? openerp: addons paths: /home/erp/workspace_7/addons,/home/erp/workspace_7/web/addons
+2014-07-15 08:40:57,329 3756 INFO ? openerp: database hostname: localhost
+2014-07-15 08:40:57,329 3756 INFO ? openerp: database port: 5432
+2014-07-15 08:40:57,329 3756 INFO ? openerp: database user: erp
+2014-07-15 08:40:57,643 3756 WARNING ? openerp.addons.google_docs.google_docs: Please install latest gdata-python-client from http://code.google.com/p/gdata-python-client/downloads/list
+2014-07-15 08:40:57,896 3756 WARNING ? openerp.addons.smsclient.smsclient: ERROR IMPORTING SOAPpy, if not installed, please install it: e.g.: apt-get install python-soappy
+2014-07-15 08:40:57,963 3756 INFO ? openerp: OpenERP server is running, waiting for connections...
+2014-07-15 08:40:57,964 3756 INFO ? openerp.service.wsgi_server: HTTP service (werkzeug) running on 0.0.0.0:8070

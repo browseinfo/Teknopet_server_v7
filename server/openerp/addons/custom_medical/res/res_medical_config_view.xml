@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- Medical Patient Status -->
+			
+		<record id="view_medical_patient_status_tree" model="ir.ui.view">
+			<field name="name">medical.patient.status.tree</field>
+			<field name="model">medical.patient.status</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Patient Status">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_patient_status_form" model="ir.ui.view">
+			<field name="name">medical.patient.status.form</field>
+			<field name="model">medical.patient.status</field>
+			<field name="arch" type="xml">
+				<form string="Medical Patient Status" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_patient_status_search" model="ir.ui.view">
+			<field name="name">medical.patient.status.search</field>
+			<field name="model">medical.patient.status</field>
+			<field name="arch" type="xml">
+				<search string="Medical Patient Status">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_patient_status_view">
+			<field name="name">Medical Patient Status</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.status</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_patient_status_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_status_view_tree">
+			<field name="act_window_id" ref="act_open_medical_patient_status_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_patient_status_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_status_view_form">
+			<field name="act_window_id" ref="act_open_medical_patient_status_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_patient_status_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Specialty -->
+			
+		<record id="view_medical_specialty_tree" model="ir.ui.view">
+			<field name="name">medical.specialty.tree</field>
+			<field name="model">medical.specialty</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Specialty">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_specialty_form" model="ir.ui.view">
+			<field name="name">medical.specialty.form</field>
+			<field name="model">medical.specialty</field>
+			<field name="arch" type="xml">
+				<form string="Medical Specialty" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_specialty_search" model="ir.ui.view">
+			<field name="name">medical.specialty.search</field>
+			<field name="model">medical.specialty</field>
+			<field name="arch" type="xml">
+				<search string="Medical Specialty">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_specialty_view">
+			<field name="name">Medical Specialty</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.specialty</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_specialty_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_specialty_view_tree">
+			<field name="act_window_id" ref="act_open_medical_specialty_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_specialty_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_specialty_view_form">
+			<field name="act_window_id" ref="act_open_medical_specialty_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_specialty_form" />
+		</record>
+		
+		
+		<!-- Medical Center -->
+			
+		<record id="view_medical_center_tree" model="ir.ui.view">
+			<field name="name">medical.center.tree</field>
+			<field name="model">medical.center</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Center">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_center_form" model="ir.ui.view">
+			<field name="name">medical.center.form</field>
+			<field name="model">medical.center</field>
+			<field name="arch" type="xml">
+				<form string="Medical Center" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_center_search" model="ir.ui.view">
+			<field name="name">medical.center.search</field>
+			<field name="model">medical.center</field>
+			<field name="arch" type="xml">
+				<search string="Medical Center">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_center_view">
+			<field name="name">Medical Center</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.center</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_center_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_center_view_tree">
+			<field name="act_window_id" ref="act_open_medical_center_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_center_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_center_view_form">
+			<field name="act_window_id" ref="act_open_medical_center_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_center_form" />
+		</record>
+		
+		
+		<!-- Medical Activity -->
+			
+		<record id="view_medical_activity_tree" model="ir.ui.view">
+			<field name="name">medical.activity.tree</field>
+			<field name="model">medical.activity</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Activity">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_activity_form" model="ir.ui.view">
+			<field name="name">medical.activity.form</field>
+			<field name="model">medical.activity</field>
+			<field name="arch" type="xml">
+				<form string="Medical Activity" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_activity_search" model="ir.ui.view">
+			<field name="name">medical.activity.search</field>
+			<field name="model">medical.activity</field>
+			<field name="arch" type="xml">
+				<search string="Medical Activity">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_activity_view">
+			<field name="name">Medical Activity</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.activity</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_activity_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_activity_view_tree">
+			<field name="act_window_id" ref="act_open_medical_activity_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_activity_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_activity_view_form">
+			<field name="act_window_id" ref="act_open_medical_activity_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_activity_form" />
+		</record>
+		
+		
+		<!-- Medical Destination -->
+			
+		<record id="view_medical_destination_tree" model="ir.ui.view">
+			<field name="name">medical.destination.tree</field>
+			<field name="model">medical.destination</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Destination">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_destination_form" model="ir.ui.view">
+			<field name="name">medical.destination.form</field>
+			<field name="model">medical.destination</field>
+			<field name="arch" type="xml">
+				<form string="Medical Destination" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_destination_search" model="ir.ui.view">
+			<field name="name">medical.destination.search</field>
+			<field name="model">medical.destination</field>
+			<field name="arch" type="xml">
+				<search string="Medical Destination">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_destination_view">
+			<field name="name">Medical Destination</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.destination</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_destination_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_destination_view_tree">
+			<field name="act_window_id" ref="act_open_medical_destination_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_destination_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_destination_view_form">
+			<field name="act_window_id" ref="act_open_medical_destination_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_destination_form" />
+		</record>
+		
+		
+		<!-- Medical Disease Category -->
+			
+		<record id="view_medical_disease_category_tree" model="ir.ui.view">
+			<field name="name">medical.disease.category.tree</field>
+			<field name="model">medical.disease.category</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Disease Category">
+					<field name="name" />
+					<field name="code" />
+					<field name="medical_disease_group_id" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_disease_category_form" model="ir.ui.view">
+			<field name="name">medical.disease.category.form</field>
+			<field name="model">medical.disease.category</field>
+			<field name="arch" type="xml">
+				<form string="Medical Disease Category" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+							<field name="medical_disease_group_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_disease_category_search" model="ir.ui.view">
+			<field name="name">medical.disease.category.search</field>
+			<field name="model">medical.disease.category</field>
+			<field name="arch" type="xml">
+				<search string="Medical Disease Category">
+					<field name="name" />
+					<field name="code" />
+					<field name="medical_disease_group_id" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Medical disease Group" domain="[]" context="{'group_by':'medical_disease_group_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_disease_category_view">
+			<field name="name">Medical Disease Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.disease.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_disease_category_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_category_view_tree">
+			<field name="act_window_id" ref="act_open_medical_disease_category_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_disease_category_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_category_view_form">
+			<field name="act_window_id" ref="act_open_medical_disease_category_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_disease_category_form" />
+		</record>
+		
+		
+		<!-- Medical Disease Group -->
+			
+		<record id="view_medical_disease_group_tree" model="ir.ui.view">
+			<field name="name">medical.disease.group.tree</field>
+			<field name="model">medical.disease.group</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Disease Group">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_disease_group_form" model="ir.ui.view">
+			<field name="name">medical.disease.group.form</field>
+			<field name="model">medical.disease.group</field>
+			<field name="arch" type="xml">
+				<form string="Medical Disease Group" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_disease_group_search" model="ir.ui.view">
+			<field name="name">medical.disease.group.search</field>
+			<field name="model">medical.disease.group</field>
+			<field name="arch" type="xml">
+				<search string="Medical Disease Group">
+					<field name="name" />
+					<field name="code" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_disease_group_view">
+			<field name="name">Medical Disease Group</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.disease.group</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_disease_group_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_group_view_tree">
+			<field name="act_window_id" ref="act_open_medical_disease_group_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_disease_group_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_group_view_form">
+			<field name="act_window_id" ref="act_open_medical_disease_group_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_disease_group_form" />
+		</record>
+		
+		
+		<!-- Medical Disease -->
+			
+		<record id="view_medical_disease_tree" model="ir.ui.view">
+			<field name="name">medical.disease.tree</field>
+			<field name="model">medical.disease</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Disease">
+					<field name="name" />
+					<field name="code" />
+					<field name="medical_disease_categ_id" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_disease_form" model="ir.ui.view">
+			<field name="name">medical.disease.form</field>
+			<field name="model">medical.disease</field>
+			<field name="arch" type="xml">
+				<form string="Medical Disease" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+							<field name="medical_disease_categ_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_disease_search" model="ir.ui.view">
+			<field name="name">medical.disease.search</field>
+			<field name="model">medical.disease</field>
+			<field name="arch" type="xml">
+				<search string="Medical Disease">
+					<field name="name" />
+					<field name="code" />
+					<field name="medical_disease_categ_id" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Medical disease category" domain="[]" context="{'group_by':'medical_disease_categ_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_disease_view">
+			<field name="name">Medical Disease</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.disease</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_disease_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_view_tree">
+			<field name="act_window_id" ref="act_open_medical_disease_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_disease_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_view_form">
+			<field name="act_window_id" ref="act_open_medical_disease_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_disease_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Sentinel Disease -->
+			
+		<record id="view_medical_sentinel_disease_tree" model="ir.ui.view">
+			<field name="name">medical.disease.sentinel.tree</field>
+			<field name="model">medical.disease.sentinel</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Disease Sentinel">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_disease_sentinel_form" model="ir.ui.view">
+			<field name="name">medical.disease.sentinel.form</field>
+			<field name="model">medical.disease.sentinel</field>
+			<field name="arch" type="xml">
+				<form string="Medical Disease Sentinel" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_disease_sentinel_search" model="ir.ui.view">
+			<field name="name">medical.disease.sentinel.search</field>
+			<field name="model">medical.disease.sentinel</field>
+			<field name="arch" type="xml">
+				<search string="Medical Disease Sentinel">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_disease_sentinel_view">
+			<field name="name">Sentinel</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.disease.sentinel</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_disease_sentinel_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_sentinel_view_tree">
+			<field name="act_window_id" ref="act_open_medical_disease_sentinel_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_sentinel_disease_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_disease_sentinel_view_form">
+			<field name="act_window_id" ref="act_open_medical_disease_sentinel_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_disease_sentinel_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Om Decision -->
+			
+		<record id="view_medical_om_decision_tree" model="ir.ui.view">
+			<field name="name">medical.om.decision.tree</field>
+			<field name="model">medical.om.decision</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Om Decision">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_om_decision_form" model="ir.ui.view">
+			<field name="name">medical.om.decision.form</field>
+			<field name="model">medical.om.decision</field>
+			<field name="arch" type="xml">
+				<form string="Medical Om Decision" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_om_decision_search" model="ir.ui.view">
+			<field name="name">medical.om.decision.search</field>
+			<field name="model">medical.om.decision</field>
+			<field name="arch" type="xml">
+				<search string="Medical Om Decision">
+					<field name="name" />
+					<field name="code" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_om_decision_view">
+			<field name="name">Medical Om Decision</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.om.decision</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_om_decision_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_om_decision_view_tree">
+			<field name="act_window_id" ref="act_open_medical_om_decision_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_om_decision_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_om_decision_view_form">
+			<field name="act_window_id" ref="act_open_medical_om_decision_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_om_decision_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Act Group -->
+			
+		<record id="view_medical_act_group_tree" model="ir.ui.view">
+			<field name="name">medical.act.group.tree</field>
+			<field name="model">medical.act.group</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Act Group">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_act_group_form" model="ir.ui.view">
+			<field name="name">medical.act.group.form</field>
+			<field name="model">medical.act.group</field>
+			<field name="arch" type="xml">
+				<form string="Medical Act Group" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_act_group_search" model="ir.ui.view">
+			<field name="name">medical.act.group.search</field>
+			<field name="model">medical.act.group</field>
+			<field name="arch" type="xml">
+				<search string="Medical Act Group">
+					<field name="name" />
+					<field name="code" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_act_group_view">
+			<field name="name">Act Group</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.act.group</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_act_group_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_group_view_tree">
+			<field name="act_window_id" ref="act_open_medical_act_group_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_act_group_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_group_view_form">
+			<field name="act_window_id" ref="act_open_medical_act_group_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_act_group_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Act Category -->
+			
+		<record id="view_medical_act_category_tree" model="ir.ui.view">
+			<field name="name">medical.act.category.tree</field>
+			<field name="model">medical.act.category</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Act Category">
+					<field name="name" />
+					<field name="code" />
+					<field name="med_act_group_id" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_act_category_form" model="ir.ui.view">
+			<field name="name">medical.act.category.form</field>
+			<field name="model">medical.act.category</field>
+			<field name="arch" type="xml">
+				<form string="Medical Act Category" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+							<field name="med_act_group_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_act_category_search" model="ir.ui.view">
+			<field name="name">medical.act.category.search</field>
+			<field name="model">medical.act.category</field>
+			<field name="arch" type="xml">
+				<search string="Medical Act Category">
+					<field name="name" />
+					<field name="code" />
+					<field name="med_act_group_id" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Act Group" domain="[]" context="{'group_by':'med_act_group_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_act_category_view">
+			<field name="name">Act Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.act.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_act_category_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_category_view_tree">
+			<field name="act_window_id" ref="act_open_medical_act_category_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_act_category_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_category_view_form">
+			<field name="act_window_id" ref="act_open_medical_act_category_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_act_category_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Act -->
+			
+		<record id="view_medical_act_tree" model="ir.ui.view">
+			<field name="name">medical.act.tree</field>
+			<field name="model">medical.act</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Act">
+					<field name="name" />
+					<field name="code" />
+					<field name="med_act_categ_id" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_act_form" model="ir.ui.view">
+			<field name="name">medical.act.form</field>
+			<field name="model">medical.act</field>
+			<field name="arch" type="xml">
+				<form string="Medical Act" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="code" />
+							<field name="med_act_categ_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_act_search" model="ir.ui.view">
+			<field name="name">medical.act.search</field>
+			<field name="model">medical.act</field>
+			<field name="arch" type="xml">
+				<search string="Medical Act">
+					<field name="name" />
+					<field name="code" />
+					<field name="med_act_categ_id" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Act Category" domain="[]" context="{'group_by':'med_act_categ_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_act_view">
+			<field name="name">Act</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.act</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_act_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_view_tree">
+			<field name="act_window_id" ref="act_open_medical_act_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_act_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_act_view_form">
+			<field name="act_window_id" ref="act_open_medical_act_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_act_form" />
+		</record>
+		
+		
+		
+		<!-- Medical OM Type -->
+			
+		<record id="view_medical_om_type_tree" model="ir.ui.view">
+			<field name="name">medical.om.type.tree</field>
+			<field name="model">medical.om.type</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Om Type">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_om_type_form" model="ir.ui.view">
+			<field name="name">medical.om.type.form</field>
+			<field name="model">medical.om.type</field>
+			<field name="arch" type="xml">
+				<form string="Medical Om Type" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_om_type_search" model="ir.ui.view">
+			<field name="name">medical.om.type.search</field>
+			<field name="model">medical.om.type</field>
+			<field name="arch" type="xml">
+				<search string="Medical Om Type">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_om_type_view">
+			<field name="name">Medical OM Type</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.om.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_om_type_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_om_type_view_tree">
+			<field name="act_window_id" ref="act_open_medical_om_type_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_om_type_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_om_type_view_form">
+			<field name="act_window_id" ref="act_open_medical_om_type_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_om_type_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Medicament Galenic -->
+			
+		<record id="view_medical_medicament_galenic_tree" model="ir.ui.view">
+			<field name="name">medical.medicament.galenic.tree</field>
+			<field name="model">medical.medicament.galenic</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Medicament Galenic">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_medicament_galenic_form" model="ir.ui.view">
+			<field name="name">medical.medicament.galenic.form</field>
+			<field name="model">medical.medicament.galenic</field>
+			<field name="arch" type="xml">
+				<form string="Medical Medicament Galenic" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_medicament_galenic_search" model="ir.ui.view">
+			<field name="name">medical.medicament.galenic.search</field>
+			<field name="model">medical.medicament.galenic</field>
+			<field name="arch" type="xml">
+				<search string="Medical Medicament Galenic">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_medicament_galenic_view">
+			<field name="name">Medical Medicament Galenic</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.medicament.galenic</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_medicament_galenic_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_galenic_view_tree">
+			<field name="act_window_id" ref="act_open_medical_medicament_galenic_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_medicament_galenic_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_galenic_view_form">
+			<field name="act_window_id" ref="act_open_medical_medicament_galenic_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_medicament_galenic_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Medicament Speciality -->
+			
+		<record id="view_medical_medicament_speciality_tree" model="ir.ui.view">
+			<field name="name">medical.medicament.speciality.tree</field>
+			<field name="model">medical.medicament.speciality</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Medicament Speciality">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_medicament_speciality_form" model="ir.ui.view">
+			<field name="name">medical.medicament.speciality.form</field>
+			<field name="model">medical.medicament.speciality</field>
+			<field name="arch" type="xml">
+				<form string="Medical Medicament Speciality" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_medicament_speciality_search" model="ir.ui.view">
+			<field name="name">medical.medicament.speciality.search</field>
+			<field name="model">medical.medicament.speciality</field>
+			<field name="arch" type="xml">
+				<search string="Medical Medicament Speciality">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_medicament_speciality_view">
+			<field name="name">Medical Medicament Speciality</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.medicament.speciality</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_medicament_speciality_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_speciality_view_tree">
+			<field name="act_window_id" ref="act_open_medical_medicament_speciality_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_medicament_speciality_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_speciality_view_form">
+			<field name="act_window_id" ref="act_open_medical_medicament_speciality_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_medicament_speciality_form" />
+		</record>
+		
+		
+		
+		<!-- Medical Medicament Group -->
+			
+		<record id="view_medical_medicament_group_tree" model="ir.ui.view">
+			<field name="name">medical.medicament.group.tree</field>
+			<field name="model">medical.medicament.group</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Medicament Group">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_medicament_group_form" model="ir.ui.view">
+			<field name="name">medical.medicament.group.form</field>
+			<field name="model">medical.medicament.group</field>
+			<field name="arch" type="xml">
+				<form string="Medical Medicament Group" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_medicament_group_search" model="ir.ui.view">
+			<field name="name">medical.medicament.group.search</field>
+			<field name="model">medical.medicament.group</field>
+			<field name="arch" type="xml">
+				<search string="Medical Medicament Group">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_medicament_group_view">
+			<field name="name">Medical Medicament Group</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.medicament.group</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_medicament_group_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_group_view_tree">
+			<field name="act_window_id" ref="act_open_medical_medicament_group_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_medicament_group_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_group_view_form">
+			<field name="act_window_id" ref="act_open_medical_medicament_group_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_medicament_group_form" />
+		</record>
+		
+		
+		
+		
+		<!-- Medical Examination -->
+			
+		<record id="view_medical_examination_tree" model="ir.ui.view">
+			<field name="name">medical.examination.tree</field>
+			<field name="model">medical.examination</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Examination">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_examination_form" model="ir.ui.view">
+			<field name="name">medical.examination.form</field>
+			<field name="model">medical.examination</field>
+			<field name="arch" type="xml">
+				<form string="Medical Examination" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_examination_search" model="ir.ui.view">
+			<field name="name">medical.examination.search</field>
+			<field name="model">medical.examination</field>
+			<field name="arch" type="xml">
+				<search string="Medical Examination">
+					<field name="name" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_examination_view">
+			<field name="name">Medical Examination</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.examination</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_examination_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_examination_view_tree">
+			<field name="act_window_id" ref="act_open_medical_examination_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_examination_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_group_view_form">
+			<field name="act_window_id" ref="act_open_medical_medicament_group_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_examination_form" />
+		</record>
+		
+		
+		
+		
+		
+		
+	</data>
+</openerp>
+		
+		
+		

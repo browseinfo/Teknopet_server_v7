@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		
+        <record id="view_res_partner_custom" model="ir.ui.view">
+            <field name="name">res.partner.custom.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//notebook/page[@string='Accounting']" position="after">
+            		<page string="Medical" attrs="{'invisible': [('is_company','=',True)]}">
+            			<group string="Patient" col="4">
+    	        			<field name="is_patient" />
+    	        			<field name="patient_sex" attrs="{'required': [('is_company','!=',True)]}"/>
+    	        			<field name="patient_birthdate" />
+    	        			<field name="patient_age" readonly="1"/>
+    	        			<field name="patient_staff_number" />
+    	        			<field name="patient_status_id" on_change="onchange_patient_status(patient_status_id)"/>
+    	        			<field name="is_dependant" invisible="1"/>
+    	        			<field name="patent_dependant_employee_id" attrs="{'required': [('is_dependant','=',True)]}" />
+    	        			<field name="patient_dependant_relationship" attrs="{'required': [('is_dependant','=',True)]}" />
+    	        			
+            			</group>
+<!--             			<group string="Doctor" col="4"> -->
+<!-- 	            			<field name="is_doctor" /> -->
+<!-- 	            		</group> -->
+<!-- 	            		<group string="Speciality"> -->
+<!-- 	            			<field name="doctor_specialty_ids" nolabel="1"/> -->
+<!--             			</group> -->
+<!--             			<group string="Patient Consultations"> -->
+<!--             				<field name="patient_consultation_line" nolabel="1"> -->
+<!--             					<tree string="Patient Consultations"> -->
+<!--             						<field name="doctor_id" /> -->
+<!--             						<field name="center_id" /> -->
+<!--             						<field name="destination_id" /> -->
+<!--             						<field name="state" /> -->
+<!--             					</tree> -->
+<!--             				</field> -->
+<!--             			</group> -->
+<!--             			<group string="Doctor Consultations"> -->
+<!--             				<field name="doctor_consultation_line" nolabel="1"> -->
+<!--             					<tree string="Doctor Consultations"> -->
+<!--             						<field name="patient_id" /> -->
+<!--             						<field name="center_id" /> -->
+<!--             						<field name="destination_id" /> -->
+<!--             						<field name="state" /> -->
+<!--             					</tree> -->
+<!--             				</field> -->
+<!--             			</group>	 -->
+            		</page>
+            	</xpath>
+            </field>
+        </record>
+        
+        <record id="action_partner_form_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('is_patient','=',True),('customer','=',True)]</field>
+            <field name="context">{"search_default_is_patient":1, 'default_is_patient': True,'default_customer': True}</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a patients.
+              </p>
+            </field>
+        </record>
+        
+<!--         <record id="action_partner_form_doctor" model="ir.actions.act_window"> -->
+<!--             <field name="name">Doctors</field> -->
+<!--             <field name="type">ir.actions.act_window</field> -->
+<!--             <field name="res_model">res.partner</field> -->
+<!--             <field name="view_type">form</field> -->
+<!--             <field name="view_mode">kanban,tree,form</field> -->
+<!--             <field name="domain">[('is_doctor','=',True)]</field> -->
+<!--             <field name="context">{"search_default_is_doctor":1, 'default_is_doctor': True}</field> -->
+<!--             <field name="search_view_id" ref="base.view_res_partner_filter"/> -->
+<!--             <field name="help" type="html"> -->
+<!--               <p class="oe_view_nocontent_create"> -->
+<!--                 Click to add a doctors. -->
+<!--               </p> -->
+<!--             </field> -->
+<!--         </record> -->
+        
+        
+        
+    </data>
+</openerp>

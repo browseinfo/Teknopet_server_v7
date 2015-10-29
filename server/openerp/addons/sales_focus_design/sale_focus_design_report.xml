@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report auto="False" id="report_sale_order_image_focus" model="sale.order" name="sale.order.image"
+                rml="sales_focus_design/report/focus_design.rml" string="Quotation / Focus Product Design"
+                usage="default"/>
+		
+		
+		<record id="focus_design_report" model="ir.actions.report.xml">
+	        <field name="name">focus_design_report</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">Focus Design Report</field>
+	        <field name="report_type">aeroo</field>
+	        <field name="in_format">oo-ods</field>
+	        <field name="out_format" model="report.mimetypes" search="[('code','=','oo-xls'),('compatible_types','=','oo-ods')]"/>
+	        <field name="parser_loc">sales_focus_design/report/focus_design_report.py</field>
+	        <field name="report_rml">sales_focus_design/report/focus_design_report.ods</field>
+	        <field name="parser_state">loc</field>
+	        <field name="tml_source">file</field>
+	        <field name="attachment_use" eval="0"/>
+    	</record> 
+    	   
+    	<report 
+			auto="False" 
+			menu="True"
+			id="focus_design_report" 
+			model="sale.order" 
+			name="focus.design.report"
+	        string="Focus Design"
+	        rml="sales_focus_design/report/focus_design_report.ods"/>
+		
+		
+		<record id="test_report" model="ir.actions.report.xml">
+	        <field name="name">focus_design_report</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">Test Report</field>
+	        <field name="report_type">aeroo</field>
+	        <field name="in_format">oo-ods</field>
+	        <field name="out_format" model="report.mimetypes" search="[('code','=','oo-xls'),('compatible_types','=','oo-ods')]"/>
+	        <field name="parser_loc">sales_focus_design/report/test.py</field>
+	        <field name="report_rml">sales_focus_design/report/test.ods</field>
+	        <field name="parser_state">loc</field>
+	        <field name="tml_source">file</field>
+	        <field name="attachment_use" eval="0"/>
+    	</record> 
+    	   
+    	<report 
+			auto="False" 
+			menu="True"
+			id="test_report" 
+			model="sale.order" 
+			name="test.report"
+	        string="Test Design"
+	        rml="sales_focus_design/report/test.ods"/>
+		
+		
+    </data>
+</openerp>

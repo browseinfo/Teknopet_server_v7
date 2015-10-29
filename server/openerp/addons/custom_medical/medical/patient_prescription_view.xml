@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- Medical Patient Consultation -->
+			
+		<record id="view_medical_patient_prescription_tree" model="ir.ui.view">
+			<field name="name">medical.patient.prescription.tree</field>
+			<field name="model">medical.patient.prescription</field>
+			<field name="arch" type="xml">
+				<tree string="Medical Patient Prescription">
+					<field name="consultation_id" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_medical_patient_prescription_form" model="ir.ui.view">
+			<field name="name">medical.patient.prescription.form</field>
+			<field name="model">medical.patient.prescription</field>
+			<field name="arch" type="xml">
+				<form string="Medical Patient Prescription" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="consultation_id" />
+						</group>
+						<notebook>
+							<page string="Medicament">
+								<group>
+									<field name="medicament_line" nolabel="1">
+										<tree editable="bottom">
+											<field name="medicament_id" domain="[('is_medicament','=',True)]"/>
+											<field name="medicament_qty" />
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Examination">
+								<group>
+									<field name="examination_line" nolabel="1">
+										<tree editable="bottom">
+											<field name="examination_id" />
+											<field name="examination_note" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_medical_patient_prescription_search" model="ir.ui.view">
+			<field name="name">medical.patient.prescription.search</field>
+			<field name="model">medical.patient.prescription</field>
+			<field name="arch" type="xml">
+				<search string="Medical Patient Prescription">
+					<field name="consultation_id" />
+				</search>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_open_medical_patient_prescription_view">
+			<field name="name">Medical Patient Prescription</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.prescription</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_patient_prescription_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+		
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_consultation_view_tree">
+			<field name="act_window_id" ref="act_open_medical_patient_consultation_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_patient_consultation_tree" />
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_consultation_view_form">
+			<field name="act_window_id" ref="act_open_medical_patient_consultation_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_patient_consultation_form" />
+		</record>
+		
+		
+		
+		
+		
+	</data>
+</openerp>
